@@ -9,7 +9,7 @@ import { useMediaQuery } from 'react-responsive'
 const Hero = () => {
 const videoRef = useRef();
 
-const isMobile = useMediaQuery({maxwidth: 768})
+const isMobile = useMediaQuery({ maxWidth: 767});
 
 useGSAP(()=>{
     const heroSplit = new SplitText('.title',
@@ -106,10 +106,10 @@ useGSAP(()=>{
      </div>
 
    </section>
-   <div className="video absolute insert-0">
+   <div className=" video absolute insert-0">
     <video
     ref={videoRef}
-    src="/videos/output.mp4"
+    src="/videos/input.mp4"
     muted
     playsInline
     preload='auto'
