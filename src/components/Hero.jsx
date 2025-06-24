@@ -9,7 +9,7 @@ import { useMediaQuery } from 'react-responsive'
 const Hero = () => {
 const videoRef = useRef();
 
-const isMobile = useMediaQuery({ maxWidth: 767});
+const isMobile = useMediaQuery({ maxWidth: 768});
 
 useGSAP(()=>{
     const heroSplit = new SplitText('.title',
@@ -53,17 +53,16 @@ useGSAP(()=>{
     },0)
 
     const startValue = isMobile ? 'top 50%': 'center 60%';
-    const endvalue = isMobile ? '120% top': 'bottom top';
+    const endValue = isMobile ? '120% top': 'bottom top';
 
-    const tl = gsap.timeline({
+    let tl = gsap.timeline({
         scrollTrigger: {
-            trigger: 'video',
+            trigger: '.video',
             start: startValue,
-            end: endvalue,
+            end: endValue,
             scrub: true,
-            pin: true,
-            
-        }
+            pin: true,    
+        },
     })
     videoRef.current.onloadedmetadata = () =>{
         tl.to(videoRef.current,{
@@ -112,6 +111,7 @@ useGSAP(()=>{
     muted
     playsInline
     preload='auto'
+    className='video'
 />
    </div>
    </>
