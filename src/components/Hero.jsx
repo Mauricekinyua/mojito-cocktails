@@ -57,12 +57,11 @@ useGSAP(()=>{
 
     const tl = gsap.timeline({
         scrollTrigger: {
-            trigger: '.video',
+            trigger: 'video',
             start: startValue,
             end: endvalue,
             scrub: true,
             pin: true,
-            pinSpacing: false,
             
         }
     })
